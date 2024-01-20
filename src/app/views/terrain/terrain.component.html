@@ -1,0 +1,31 @@
+<!-- Search input -->
+<div class="row my-3">
+  <div class="col-md-6">
+    <label for="cinSearch">Search by Proprietor CIN:</label>
+    <input type="text" id="cinSearch" class="form-control" [(ngModel)]="searchCIN" (input)="onInputChange()" />
+  </div>
+</div>
+<!-- Liste des terrains -->
+<div class="row my-5">
+  <div class="col-md-6" *ngFor="let item of terrainModule">
+    <div class="card mb-3">
+      <div class="card-header">
+        Terrain
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Surface :</strong> {{item.mc}} </li>
+          <li class="list-group-item" *ngIf="item?.proprietaire?.prenom!==null"><strong>Proprietaire :</strong> {{item.proprietaire.prenom}} </li>
+          <li class="list-group-item" *ngIf="item?.categorie?.type!==null"><strong>Type du terrain :</strong> {{item.categorie.type}} </li>
+          <li class="list-group-item text-center">
+            <button class="btn btn-warning mx-2"  (click)="openEditForm(item)">Edit</button>
+            <button class="btn btn-danger mx-2" (click)="delete(item.id)">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-8 text-right">
+  <button class="btn btn-outline-primary" (click)="openAddForm()">Enregistrer</button>
+</div>

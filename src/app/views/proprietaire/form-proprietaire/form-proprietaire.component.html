@@ -1,0 +1,27 @@
+<div style="margin: 20px auto;">
+  <form [formGroup]="catForm" (ngSubmit)="onFormSubmit()">
+    <div class="card">
+      <div class="card-header" style="background-color: #ff66b2; color: white;">
+        <h5>{{ data ? 'Modifier' : 'Ajouter' }} Proprietaire</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+        </div>
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Prenom</label>
+          <input type="text" class="form-control" id="prenom" placeholder="Prenom" formControlName="prenom">
+        </div>
+        <div class="mb-3">
+          <label for="cin" class="form-label">CIN</label>
+          <input type="text" class="form-control" id="cin" placeholder="CIN" formControlName="cin">
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-end">
+        <button class="btn btn-danger" type="Submit">{{ data ? 'Modifier' : 'Ajouter' }} </button>
+        <button class="btn btn-danger ml-2" type="button">Annuler</button>
+      </div>
+    </div>
+  </form>
+</div>

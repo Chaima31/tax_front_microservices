@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <form [formGroup]="catForm" (ngSubmit)="onFormSubmit()">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white">
+        <h5 class="m-0">{{ data ? 'Modifier' : 'Ajouter' }}</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <input type="text" class="form-control" id="type" placeholder="Type" formControlName="type">
+        </div>
+        <div class="mb-3">
+          <label for="taux" class="form-label">Taux</label>
+          <input type="number" class="form-control" id="taux" placeholder="Taux" formControlName="taux">
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-end">
+        <button class="btn btn-success" type="submit">{{ data ? 'Modifier' : 'Ajouter' }}</button>
+        <button class="btn btn-danger ml-2" type="button">Annuler</button>
+      </div>
+    </div>
+  </form>
+</div>
+

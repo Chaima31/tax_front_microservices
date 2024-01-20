@@ -1,0 +1,41 @@
+<section class="h-100 gradient-form" style="background-image: url('../../assets/images/bg.png'); background-size: cover;">
+  <div class="container-fluid">
+    <img src="../../assets/images/logo.png" alt="Logo" class="logo-img" />
+
+    <div class="container py-5">
+      <div class="row justify-content-left mt-3 align-items-center h-100"></div>
+      <div class="row justify-content-left mt-3 align-items-center h-100"></div>
+      <div class="row justify-content-left mt-3 align-items-center h-100">
+        <div class="col-md-6">
+          <div class="card rounded-3 text-dark" style="background-color: rgb(245, 248, 249);">
+            <div class="row g-0">
+              <div class="col">
+                <div class="card-body p-md-5 mx-md-4 text-center">
+                  <div class="mb-4">
+                    <h2 class="mb-0" style="color: rgb(75, 110, 130);">Welcome to TNB Morocco</h2>
+                  </div>
+
+                  <form>
+                    <div class="mb-4 text-center">
+                      <input type="text" id="form2Example11" class="form-control form-control-lg"
+                        placeholder="Username" [(ngModel)]="username" name="username" required />
+                    </div>
+
+                    <div class="mb-4 text-center">
+                      <input type="password" id="form2Example22" class="form-control form-control-lg"
+                        placeholder="Password" [(ngModel)]="password" name="password" required />
+                    </div>
+
+                    <div class="text-center">
+                      <button class="btn btn-primary btn-lg gradient-custom-2" type="button" (click)="login()">Login</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

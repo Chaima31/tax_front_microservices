@@ -1,0 +1,40 @@
+<div class="row my-5">
+  <div class="col-md-12">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Terrain ID</th>
+          <th scope="col">Nom Proprietaire</th>
+          <th scope="col">Prenom Proprietaire</th>
+          <th scope="col">Categorie du Terrain</th>
+          <th scope="col">Surface du Terrain</th>
+          <th scope="col">Montant de Taxe</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of taxetnb">
+          <td>{{ item.terrain?.id }}</td>
+          <td>{{ item.terrain?.proprietaire?.nom }}</td>
+          <td>{{ item.terrain?.proprietaire?.prenom }}</td>
+          <td>{{ item.terrain?.categorie?.type }}</td>
+          <td>{{ item.terrain?.mc }}</td>
+          <td>{{ calculateMontantDeTaxe(item.terrain) }}</td>
+          <td>
+            <button class="btn btn-warning mr-2" (click)="openEditForm(item)">Edit</button>
+            <button class="btn btn-danger mr-2" (click)="Delete(item.id)">Delete</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row my-3">
+  <div class="col-md-6">
+  </div>
+  <div class="col-md-8 text-right">
+    <button class="btn btn-outline-primary" (click)="openAddForm()">Nouveau</button>
+  </div>
+</div>
